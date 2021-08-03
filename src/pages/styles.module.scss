@@ -3,6 +3,9 @@
 
 // colors
 $background: #082032;
+$background-800: #1b3349;
+$background-700: #29455e;
+$background-600: #375874;
 $primary: #2C394B;
 $primary-600: #5f7591;
 $primary-400: #8396b3;
@@ -14,10 +17,39 @@ $secondary-400: #7590a4;
 
 $highlight: #FF4C29;
 $highlight-400: #ff6e4b;
+$highlight-300: #ff8a6b;
 
 body {
     background-color: $background;
     font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    z-index: 11;
+    padding: 0px 50px;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 12;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
 }
 
 .main {
@@ -54,10 +86,27 @@ body {
     max-width: 540px;
 }
 
+.inner_section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 50px;
+}
+
+.me {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 4px;
+}
+
 .about_section {
+    h2 {
+        font-size: 32px;
+    }
+
     margin: 0px auto;
     max-width: 1000px;
-    
+    padding: 100px 0;
     h2 {
         display: flex;
         -webkit-box-align: center;
@@ -83,6 +132,103 @@ body {
     }
 }
 
+.projects_list {
+    li {
+        margin-bottom: 300px;
+    }
+}
+
+.project_section {
+    h2 {
+        font-size: 32px;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+        margin: 10px 0px 40px;
+        width: 100%;
+        white-space: nowrap;
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: $primary;
+        }
+    }
+
+    margin: 0px auto;
+    max-width: 1000px;
+    padding: 100px 0;
+
+    .project {
+        position: relative;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(12, 1fr);
+        -webkit-box-align: center;
+        align-items: center;
+    }
+
+    .project_content {
+        position: relative;
+        grid-area: 1 / 1 / -1 / 7;
+        grid-column: 4 / -1;
+        text-align: right;
+    }
+
+    .image {
+        object-fit: cover;
+        width: 450px;
+        height: 300px;
+        border-radius: 4px;
+    }
+
+    .project_content {
+        .project_subtitle {
+            color: $highlight-300;
+            margin: 0px;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        .project_title {
+            color: $primary-200;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 28px;
+        }
+        .project_descr {
+            background-color: lighten($background, 5%);
+            border-radius: 4px;
+            z-index: 2;
+            position: relative;
+            padding: 25px;
+            p {
+                color: $secondary-400;
+                margin: 0;
+            }
+        }
+        .project_tech {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+            margin: 25px 0px 10px;
+            padding: 0px;
+            list-style: none;
+            justify-content: flex-end;
+
+            li {
+                color: $secondary-400;
+                white-space: nowrap;
+                margin: 0px 0px 5px 20px;
+            }
+        }
+    }   
+}
+
 
 
 h2 {
@@ -95,13 +241,23 @@ h3 {
 
 p {
     font-size: 18px;
-    color: $secondary-500;
+    color: $secondary-400;
+    line-height: 24px;
 }
 
 a {
-    color: $highlight-400;
+    color: $highlight-300;
+    text-decoration: none;
+
+    &:hover {
+        color: $highlight;
+    }
 }
 
+::selection {
+    background: $secondary;
+    color: $primary-400;
+  }
 
 /* scrollbar */
 /* width */
@@ -125,5 +281,5 @@ a {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
+    background: $primary; 
   }
