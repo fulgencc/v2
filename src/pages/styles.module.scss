@@ -184,6 +184,7 @@ body {
         width: 450px;
         height: 300px;
         border-radius: 4px;
+        filter: grayscale(100%) contrast(1) brightness(90%);
     }
 
     .project_content {

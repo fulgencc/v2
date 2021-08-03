@@ -4,6 +4,8 @@ import * as styles from './styles.module.scss';
 import logo from '../images/favicon.png';
 import me from '../images/me.jpg';
 import nerddarts from '../images/nerd-darts.jpg';
+import fulgencio from '../images/fulgencio.png';
+import Jobs from '../components/Jobs';
 
 // markup
 const IndexPage = () => {
@@ -62,6 +64,8 @@ const IndexPage = () => {
           </div>
         </section>
 
+        <Jobs />
+
         <section className={styles.project_section}>
           <h2>Projects</h2>
           <ul className={styles.projects_list}>
@@ -71,14 +75,15 @@ const IndexPage = () => {
                 <h3 className={styles.project_title}>Nerd Darts</h3>
                 <div className={styles.project_descr}>
                   <p>
-                    Hello! Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                    A web app for the tactical shooter Valorant. The app aims
+                    to help players effortlessly memorize and visualize lineups
+                    for agents.
                   </p>
                 </div>
                 <ul className={styles.project_tech}>
                   <li>React</li>
                   <li>Typescript</li>
+                  <li>Node.js</li>
                 </ul>
               </div>
               <img src={nerddarts} className={styles.image} alt="me" />
@@ -89,9 +94,9 @@ const IndexPage = () => {
                 <h3 className={styles.project_title}>Fulgenc.io</h3>
                 <div className={styles.project_descr}>
                   <p>
-                    Hello! Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                    My personal portfolio site, which has gone through multiple
+                    iterations. Built with React and Gatsby, and hosted on GitHub
+                    Pages.
                   </p>
                 </div>
                 <ul className={styles.project_tech}>
@@ -99,7 +104,7 @@ const IndexPage = () => {
                   <li>Gatsby</li>
                 </ul>
               </div>
-              <img src={nerddarts} className={styles.image} alt="me" />
+              <img src={fulgencio} className={styles.image} alt="me" />
             </li>
             <li className={styles.project}>
               <div className={styles.project_content}>
@@ -107,9 +112,8 @@ const IndexPage = () => {
                 <h3 className={styles.project_title}>GIPHY Search Clone</h3>
                 <div className={styles.project_descr}>
                   <p>
-                    Hello! Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                    A small web app which utilizes the GIPHY API to display GIFs
+                    that users can search for.
                   </p>
                 </div>
                 <ul className={styles.project_tech}>
