@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const Jobs = () => (
-  <section className={}>
+  <section>
     <p>hello world</p>
   </section>
 );
