@@ -1,5 +1,5 @@
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro&family=Consolas&display=swap');
 
 // colors
 $background: #082032;
@@ -19,6 +19,8 @@ $highlight: #FF4C29;
 $highlight-400: #ff6e4b;
 $highlight-300: #ff8a6b;
 
+$consolas: 'Consolas', sans-serif;
+
 body {
     background-color: $background;
     font-family: 'Source Sans Pro', sans-serif;
@@ -34,6 +36,75 @@ body {
     z-index: 11;
     padding: 0px 50px;
     width: 100%;
+}
+
+.left_sidebar_container {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left_sidebar {
+    display: flex;
+    top: 50px;
+    left: 25px;
+    color: $primary-400;
+    font-family: $consolas;
+    
+    ul {
+        list-style: none;
+        padding-left: 14px;
+        li {
+            margin-bottom: 18px;
+            
+            a {
+                color: $primary-400;
+                &:hover {
+                    color: $highlight-300;
+                }
+            }
+        }
+    }
+}
+
+.progress_bar {
+    width: 5px;
+    height: 90px;
+    margin-left: 10px;
+    margin-top: 20px;
+    .progress_bar_inner {
+        width: inherit;
+        height: inherit;
+        background: $highlight-300;
+        transform-origin: 50% 100%;
+        border-radius: 8px;
+    }
+}
+
+.right_sidebar {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    font-size: 1.5rem;
+    color: $primary-400;
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style:  none;
+    }
+
+    li {
+        margin-bottom: 18px;
+        cursor: pointer;
+        a {
+            color: $primary-400;
+            &:hover {
+                color: $highlight-300;
+            }
+        }
+    }
 }
 
 .nav {
@@ -130,9 +201,37 @@ body {
     p {
         max-width: 500px;
     }
+
+    .about_tech {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 0px 10px;
+        padding: 0px;
+        margin: 20px 0px 0px;
+        overflow: hidden;
+        list-style: none;
+        li {   
+            position: relative;
+            font-family: $consolas;
+            color: $secondary-400;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            &::before {
+                position: absolute;
+                content: "\2023";
+                color: $highlight-300;
+                margin-right: 8px;
+                font-size: 1.5rem;
+                top: -4px;
+                left: 0;
+            }
+        }
+    }
 }
 
 .projects_list {
+    margin-top: 50px;
+    padding: 0;
     li {
         margin-bottom: 300px;
     }
@@ -163,6 +262,41 @@ body {
     max-width: 1000px;
     padding: 100px 0;
 
+    .project:nth-child(2) {
+
+        .project_content {
+            position: relative;
+            grid-area: 1 / 1 / -1 / 7;
+            grid-column: 1 / 12;
+            text-align: left;
+            margin-right: 100px;
+
+            .project_subtitle {
+                color: $highlight-300;
+                margin: 0px;
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+            .project_title {
+                color: $primary-200;
+                margin-top: 0;
+                margin-bottom: 12px;
+                font-size: 28px;
+            }
+            .project_descr {
+                background-color: lighten($background, 5%);
+                border-radius: 4px;
+                z-index: 2;
+                position: relative;
+                padding: 25px;
+                p {
+                    color: $secondary-400;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
     .project {
         position: relative;
         display: grid;
@@ -170,13 +304,54 @@ body {
         grid-template-columns: repeat(12, 1fr);
         -webkit-box-align: center;
         align-items: center;
-    }
 
-    .project_content {
-        position: relative;
-        grid-area: 1 / 1 / -1 / 7;
-        grid-column: 4 / -1;
-        text-align: right;
+        .project_content {
+            position: relative;
+            grid-area: 1 / 1 / -1 / 7;
+            grid-column: 4 / -1;
+            text-align: right;
+    
+            .project_subtitle {
+                color: $highlight-300;
+                margin: 0px;
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+            .project_title {
+                color: $primary-200;
+                margin-top: 0;
+                margin-bottom: 12px;
+                font-size: 28px;
+            }
+            .project_descr {
+                background-color: lighten($background, 5%);
+                border-radius: 4px;
+                z-index: 2;
+                position: relative;
+                padding: 25px;
+                p {
+                    color: $secondary-400;
+                    margin: 0;
+                }
+            }
+            .project_tech {
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 2;
+                margin: 25px 0px 10px;
+                padding: 0px;
+                list-style: none;
+                justify-content: flex-end;
+    
+                li {
+                    font-family: $consolas;
+                    color: $secondary-400;
+                    white-space: nowrap;
+                    margin: 0px 0px 5px 20px;
+                }
+            }
+        } 
     }
 
     .image {
@@ -185,49 +360,7 @@ body {
         height: 300px;
         border-radius: 4px;
         filter: grayscale(100%) contrast(1) brightness(90%);
-    }
-
-    .project_content {
-        .project_subtitle {
-            color: $highlight-300;
-            margin: 0px;
-            font-size: 14px;
-            letter-spacing: 2px;
-        }
-        .project_title {
-            color: $primary-200;
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 28px;
-        }
-        .project_descr {
-            background-color: lighten($background, 5%);
-            border-radius: 4px;
-            z-index: 2;
-            position: relative;
-            padding: 25px;
-            p {
-                color: $secondary-400;
-                margin: 0;
-            }
-        }
-        .project_tech {
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-            margin: 25px 0px 10px;
-            padding: 0px;
-            list-style: none;
-            justify-content: flex-end;
-
-            li {
-                color: $secondary-400;
-                white-space: nowrap;
-                margin: 0px 0px 5px 20px;
-            }
-        }
-    }   
+    }  
 }
 
 

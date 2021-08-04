@@ -1,6 +1,10 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/jsx-filename-extension */
 import * as React from 'react';
+import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { useViewportScroll, motion } from 'framer-motion';
 import * as styles from './styles.module.scss';
+import * as stars from './stars.module.scss';
 import logo from '../images/favicon.png';
 import me from '../images/me.jpg';
 import nerddarts from '../images/nerd-darts.jpg';
@@ -9,11 +13,71 @@ import Jobs from '../components/Jobs';
 
 // markup
 const IndexPage = () => {
-  console.log(styles);
+  // const prevScrollY = React.useRef(0);
+
+  // const [goingUp, setGoingUp] = React.useState(true);
+
+  const { scrollYProgress } = useViewportScroll();
+
+  // React.useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     if (prevScrollY.current < currentScrollY && goingUp) {
+  //       setGoingUp(false);
+  //     }
+  //     if (prevScrollY.current > currentScrollY && !goingUp) {
+  //       setGoingUp(true);
+  //     }
+
+  //     prevScrollY.current = currentScrollY;
+  //     console.log(goingUp, currentScrollY);
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll, { passive: true });
+
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [goingUp]);
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.1,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  };
+
+  const item = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -100 },
+  };
+
+  const leftItem = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const rightItem = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0 },
+  };
 
   return (
-    <>
-      <header className={styles.header}>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={list}
+    >
+      <div className={stars.stars} />
+      <div className={stars.stars2} />
+      <div className={stars.stars3} />
+      {/* <header className={styles.header}>
         <nav className={styles.nav}>
           <img src={logo} className={styles.logo} alt="logo" />
           <div>
@@ -24,41 +88,108 @@ const IndexPage = () => {
             </ul>
           </div>
         </nav>
-      </header>
+      </header> */}
+      <div className={styles.left_sidebar_container}>
+        <motion.img variants={item} src={logo} className={styles.logo} alt="logo" />
+        <div className={styles.left_sidebar}>
+          <div className={styles.progress_bar}>
+            <motion.div
+              className={styles.progress_bar_inner}
+              style={{
+                scaleY: scrollYProgress,
+              }}
+            />
+          </div>
+          <ul>
+            <motion.li variants={leftItem}>
+              <a href="/#about">About</a>
+            </motion.li>
+            <motion.li variants={leftItem}>
+              <a href="/#work">Work</a>
+            </motion.li>
+            <motion.li variants={leftItem}>
+              <a href="/#projects">Projects</a>
+            </motion.li>
+          </ul>
+        </div>
+      </div>
+      <div className={styles.right_sidebar}>
+        <ul>
+          <li>
+            <motion.a href="https://github.com/fulgencc/" target="_blank" rel="noreferrer" variants={rightItem}>
+              <FaGithub />
+            </motion.a>
+          </li>
+          <li>
+            <motion.a href="https://www.linkedin.com/in/chris-fulgencio-b25554103/" target="_blank" rel="noreferrer" variants={rightItem}>
+              <FaLinkedinIn />
+            </motion.a>
+          </li>
+          <li>
+            <motion.a href="https://www.instagram.com/hipstopher94/" target="_blank" rel="noreferrer" variants={rightItem}>
+              <FaInstagram />
+            </motion.a>
+          </li>
+        </ul>
+      </div>
       <main className={styles.main}>
         <title>Chris Fulgencio | fulgenc.io</title>
-        <section className={styles.hero_section}>
-          <h2 className={styles.heading}>Chris Fulgencio</h2>
-          <h3 className={styles.heading}>Frontend Engineer</h3>
-          <p>
+        <motion.section
+          className={styles.hero_section}
+        >
+          <motion.h2 variants={item} className={styles.heading}>Chris Fulgencio</motion.h2>
+          <motion.h3 variants={item} className={styles.heading}>Frontend Engineer</motion.h3>
+          <motion.p variants={item}>
             I&apos;m a software engineer specializing in building and designing
             exceptional digital experiences.
             Currently, I&apos;m focused on building accessible, human-centered products at
             {' '}
             <a href="www.fulgenc.io">Ohana</a>
             .
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
-        <section className={styles.about_section}>
+        <section id="about" className={styles.about_section}>
           <h2>About Me</h2>
           <div className={styles.inner_section}>
             <div>
               <p>
-                Hello! Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-                Ante metus dictum at tempor commodo ullamcorper a.
-                Sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum.
-                Purus sit amet volutpat consequat mauris nunc congue.
+                Hi there! My name is Chris Fulgencio.
+                I&apos;m a software engineer specializing in front-end
+                development. During my four years at UC Irvine,
+                I was heavily involved in game development.
+                I even made a game which
+                {' '}
+                <a href="https://innovation.uci.edu/2016/08/pasttidesieeegamesig/">won first place at an intercollegiate competition!</a>
               </p>
               <p>
-                Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit.
-                Justo eget magna fermentum iaculis. Morbi blandit cursus risus at ultrices.
-                Eget arcu dictum varius duis at consectetur.
-                Sed nisi lacus sed viverra tellus in hac. Commodo odio aenean sed adipiscing.
-                Sollicitudin ac orci phasellus egestas tellus rutrum tellus.
+                Starting my career after college, however, I ran across React and
+                fell in love with web development. Fast forward to today and I&apos;m
+                helping build and architect front-end codebases full-time!
               </p>
+              <p>
+                Some of the technologies I&apos;ve worked with include:
+              </p>
+              <ul className={styles.about_tech}>
+                <li>
+                  Javascript (ES6)
+                </li>
+                <li>
+                  Typescript
+                </li>
+                <li>
+                  GraphQL
+                </li>
+                <li>
+                  Apollo
+                </li>
+                <li>
+                  React
+                </li>
+                <li>
+                  Gatsby
+                </li>
+              </ul>
             </div>
             <img src={me} className={styles.me} alt="me" />
           </div>
@@ -66,7 +197,7 @@ const IndexPage = () => {
 
         <Jobs />
 
-        <section className={styles.project_section}>
+        <section id="projects" className={styles.project_section}>
           <h2>Projects</h2>
           <ul className={styles.projects_list}>
             <li className={styles.project}>
@@ -162,7 +293,7 @@ const IndexPage = () => {
           </ul>
         </section>
       </main>
-    </>
+    </motion.div>
   );
 };
 
