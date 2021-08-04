@@ -77,7 +77,8 @@ body {
         width: inherit;
         height: inherit;
         background: $highlight-300;
-        transform-origin: 50% 100%;
+        transform: rotate(90deg);
+        transform-origin: left top;
         border-radius: 8px;
     }
 }
