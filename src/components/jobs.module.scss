@@ -1,0 +1,63 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro&family=Consolas&display=swap');
+
+// colors
+$background: #082032;
+$background-800: #1b3349;
+$background-700: #29455e;
+$background-600: #375874;
+$primary: #2C394B;
+$primary-600: #5f7591;
+$primary-400: #8396b3;
+$primary-200: #b4c3d8;
+
+$secondary: #334756;
+$secondary-500: #5d7c94;
+$secondary-400: #7590a4;
+
+$highlight: #FF4C29;
+$highlight-400: #ff6e4b;
+$highlight-300: #ff8a6b;
+
+$consolas: 'Consolas', sans-serif;
+
+$tab-height: 50px;
+
+.tab_list {
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.tab_button {
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $tab-height;
+    padding: 0px 20px 2px;
+    border: none;
+    border-left: 2px solid $background-600;
+    background-color: transparent;
+    color: $highlight-300;
+    font-family: $consolas;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tab_highlight {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 2px;
+    height: $tab-height;
+    border-radius: 4px;
+    background: $highlight-300;
+    transform: translateY(calc(0 * $tab-height));
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+}
