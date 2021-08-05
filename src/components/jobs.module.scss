@@ -23,6 +23,45 @@ $consolas: 'Consolas', sans-serif;
 
 $tab-height: 50px;
 
+.section {
+    h2 {
+        font-size: 32px;
+    }
+
+    margin: 0px auto;
+    max-width: 1000px;
+    padding: 100px 0;
+    h2 {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+        margin: 10px 0px 40px;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    h2::after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: $primary;
+    }
+
+    p {
+        max-width: 500px;
+    }
+}
+
+.inner_section {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    gap: 50px;
+}
+
 .tab_list {
     position: relative;
     z-index: 3;
