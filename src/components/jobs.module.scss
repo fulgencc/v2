@@ -119,6 +119,22 @@ $tab-height: 50px;
     color: $primary-400;
 }
 
-ul {
+.job_list {
     color: $primary-400;
+    list-style: none;
+    padding: 0;
+    li {   
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        &::before {
+            position: absolute;
+            content: "\2023";
+            color: $highlight-300;
+            margin-right: 8px;
+            font-size: 1.5rem;
+            top: -4px;
+            left: 0;
+        }
+    }
 }

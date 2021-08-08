@@ -7,14 +7,16 @@ import * as styles from './jobs.module.scss';
 const jobs = [{
   name: 'Ohana',
   title: 'Frontend Engineer',
-  date: 'April 2021 - Present',
-  descriptions: ['Wrote modern and robust code in a complex codebase to implement a plethora of client features'],
+  date: 'April 2021 - Present // Beverly Hills, CA',
+  descriptions: ['Wrote modern and robust code in a complex codebase to implement a plethora of client features.',
+    'Led our companys frontend development, and had a leadership opportunity with a small team.',
+    'Developed a large amount of features to streamline user experiences, including redesigning Facebook & Instagram authentication flows.'],
 },
 {
   name: 'Public Works',
   title: 'Full Stack Software Engineer',
-  date: 'Dec 2017 - April 2021',
-  descriptions: ['Developed the first React.js, Typescript, Web API, and SQL Server web application at the company.',
+  date: 'Dec 2017 - April 2021 // Los Angeles, CA',
+  descriptions: ['Spearheaded implementing modern technology standards, creating the first React.js, Typescript, Web API, and SQL Server web application at the company.',
     'Created the company’s first design style guide for web applications.',
     'Full stack development of web applications, including the gathering of functional requirements from customers.',
   ],
@@ -22,7 +24,7 @@ const jobs = [{
 {
   name: 'Eiswelt',
   title: 'Contract Web Designer',
-  date: 'June 2017 - Aug 2017 // Westmin',
+  date: 'June 2017 - Aug 2017 // Westminister, CA',
   descriptions: ['Designed and built Eiswelt Gelato’s public website.',
     'Worked with the owner to design a static site using HTML/CSS.'],
 },
@@ -58,7 +60,7 @@ const JobDescription = (props) => {
         </h3>
         <h4 className={styles.job_date}>{date}</h4>
       </div>
-      <ul>
+      <ul className={styles.job_list}>
         {descriptions.map((descr) => (<li>{descr}</li>))}
       </ul>
     </div>
@@ -94,7 +96,7 @@ const Jobs = () => {
   };
 
   return (
-    <section className={styles.section}>
+    <section id="work" className={styles.section}>
       <div className={styles.inner_section}>
         <div className={styles.tab_list} role="tablist">
           {jobs.map((job, idx) => (
