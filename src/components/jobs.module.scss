@@ -24,6 +24,7 @@ $consolas: 'Consolas', sans-serif;
 $tab-height: 50px;
 
 .section {
+    min-height: 300px;
     h2 {
         font-size: 32px;
     }
@@ -101,8 +102,6 @@ $tab-height: 50px;
     height: $tab-height;
     border-radius: 4px;
     background: $highlight-300;
-    transform: translateY(calc(0 * $tab-height));
-    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
 }
 
 .job_header {
