@@ -217,7 +217,9 @@ const IndexPage = () => {
                   <li>Node.js</li>
                 </ul>
               </div>
-              <img src={nerddarts} className={styles.image} alt="me" />
+              <div className={styles.imageWrapper}>
+                <img src={nerddarts} className={styles.image} alt="me" />
+              </div>
             </li>
             <li className={styles.project}>
               <div className={styles.project_content}>
@@ -235,7 +237,9 @@ const IndexPage = () => {
                   <li>Gatsby</li>
                 </ul>
               </div>
-              <img src={fulgencio} className={styles.image} alt="me" />
+              <div className={styles.imageWrapper}>
+                <img src={fulgencio} className={styles.image} alt="me" />
+              </div>
             </li>
             <li className={styles.project}>
               <div className={styles.project_content}>
@@ -252,7 +256,9 @@ const IndexPage = () => {
                   <li>Javascript</li>
                 </ul>
               </div>
-              <img src={nerddarts} className={styles.image} alt="me" />
+              <div className={styles.imageWrapper}>
+                <img src={nerddarts} className={styles.image} alt="me" />
+              </div>
             </li>
             {/* <li className={styles.project}>
               <div className={styles.project_content}>

@@ -97,6 +97,7 @@ const Jobs = () => {
 
   return (
     <section id="work" className={styles.section}>
+      <h2>Work &amp; Education</h2>
       <div className={styles.inner_section}>
         <div className={styles.tab_list} role="tablist">
           {jobs.map((job, idx) => (
