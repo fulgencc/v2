@@ -4,6 +4,8 @@ module.exports = {
     title: 'Portfolio',
   },
   plugins: ['gatsby-plugin-sass',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

@@ -1,0 +1,88 @@
+// fonts
+@use '../../styles/fonts' as *;
+
+// colors
+@use '../../styles/colors' as *;
+
+.about_section {
+
+    .inner_section {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 50px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    margin: 0px auto;
+    max-width: 1000px;
+    padding: 100px 0;
+    h2 {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+        margin: 10px 0px 40px;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    h2::after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: $primary;
+    }
+
+    p {
+        max-width: 500px;
+    }
+
+    .about_tech {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        gap: 0px 10px;
+        padding: 0px;
+        margin: 20px 0px 0px;
+        overflow: hidden;
+        list-style: none;
+        li {   
+            position: relative;
+            font-family: $consolas;
+            color: $primary-400;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            &::before {
+                position: absolute;
+                content: "\2023";
+                color: $highlight-300;
+                margin-right: 8px;
+                font-size: 1.5rem;
+                top: -4px;
+                left: 0;
+            }
+        }
+    }
+
+    .me {
+        object-fit: cover;
+        width: 300px;
+        height: 300px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .inner_section {
+        display: block;
+    }
+
+    .me {
+        margin-top: 50px;
+    }
+}

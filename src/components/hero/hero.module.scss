@@ -1,0 +1,31 @@
+// fonts
+@use '../../styles/fonts' as *;
+
+// colors
+@use '../../styles/colors' as *;
+
+.heading {
+    font-size: 72px;
+    letter-spacing: 2px;
+}
+
+.hero_section {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0px auto;
+    max-width: 1000px;
+    padding: 0px;
+}
+
+.hero_section .heading {
+    margin: 0;
+}
+
+.hero_section p {
+    max-width: 540px;
+}
