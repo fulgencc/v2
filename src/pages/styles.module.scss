@@ -140,6 +140,51 @@ body {
     }
 }
 
+@media (max-width: 1000px) {
+
+    .main {
+        padding: 0 24px;
+    }
+
+    .left_sidebar_container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        box-shadow: 0 20px 30px -15px rgba(black, .5);
+        background-color: $background;
+        border-radius: 4px;
+        padding: 1rem;
+
+        .left_sidebar {
+            display: flex;
+            
+            .progress_bar {
+                display: none;
+            }
+
+
+            ul {
+                list-style: none;
+                padding-left: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                li {
+                    margin-left: 50px;
+                    margin-bottom: 0;
+                    a {
+                        color: $primary-400;
+                        &:hover {
+                            color: $highlight-300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 h2 {
     color: $primary-200;
 }
