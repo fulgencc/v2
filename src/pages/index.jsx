@@ -10,6 +10,7 @@ import Jobs from '../components/jobs/Jobs';
 import About from '../components/about/About';
 import Hero from '../components/hero/Hero';
 import Projects from '../components/projects/Projects';
+import Footer from '../components/footer/Footer';
 
 // markup
 const IndexPage = () => {
@@ -114,6 +115,7 @@ const IndexPage = () => {
 
         <Projects />
       </main>
+      <Footer />
     </motion.div>
   );
 };

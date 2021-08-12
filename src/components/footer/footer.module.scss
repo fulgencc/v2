@@ -1,0 +1,32 @@
+// fonts
+@use '../../styles/fonts' as *;
+
+// colors
+@use '../../styles/colors' as *;
+
+.socials {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .socials {
+        display: block;
+        padding-bottom: 1rem;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            li {
+                font-size: 1.5rem;
+                margin-right: 2rem;
+                a {
+                    color: $primary-400;
+                    &:hover {
+                        color: $highlight-300;
+                    }
+                }
+            }
+        }
+    }
+}
