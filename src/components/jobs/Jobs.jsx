@@ -5,9 +5,14 @@ import { motion } from 'framer-motion';
 import * as styles from './jobs.module.scss';
 
 const jobs = [{
+  name: 'WELL Health',
+  title: 'Software Engineer',
+  date: 'October 2021 - Present // Santa Barbara, CA',
+},
+{
   name: 'Ohana',
   title: 'Frontend Engineer',
-  date: 'April 2021 - Present // Beverly Hills, CA',
+  date: 'April 2021 - September 2021 // Beverly Hills, CA',
   descriptions: ['Wrote modern and robust code in a complex codebase to implement a plethora of client features.',
     'Led our companys frontend development, and had a leadership opportunity with a small team.',
     'Developed a large amount of features to streamline user experiences, including redesigning Facebook & Instagram authentication flows.'],
@@ -44,8 +49,6 @@ const JobDescription = (props) => {
     descriptions,
   } = props;
 
-  console.log(styles);
-
   return (
     <div>
       <div>
@@ -61,7 +64,7 @@ const JobDescription = (props) => {
         <h4 className={styles.job_date}>{date}</h4>
       </div>
       <ul className={styles.job_list}>
-        {descriptions.map((descr) => (<li>{descr}</li>))}
+        {descriptions && descriptions.map((descr) => (<li>{descr}</li>))}
       </ul>
     </div>
   );
@@ -110,7 +113,6 @@ const Jobs = () => {
               aria-controls="panel-0"
               onClick={(e) => {
                 setTabHighlightHeight(((idx + 1) * e.currentTarget.offsetHeight) - 50);
-                console.log(((idx + 1) * e.currentTarget.offsetHeight) - 50);
                 handleSetJobs(job.name);
               }}
               className={styles.tab_button}

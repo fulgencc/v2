@@ -32,10 +32,10 @@ const About = () => (
             Typescript
           </li>
           <li>
-            GraphQL
+            GraphQL/Apollo
           </li>
           <li>
-            Apollo
+            Jest/Cucumber/Cypress
           </li>
           <li>
             React

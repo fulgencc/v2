@@ -15,9 +15,10 @@ const Hero = (props) => {
       <motion.p variants={variants}>
         I&apos;m a software engineer specializing in building and designing
         exceptional digital experiences.
-        Currently, I&apos;m focused on building accessible, human-centered products at
+        Currently, I&apos;m focused on making the health care industry better for
+        all kinds of humans at
         {' '}
-        <a href="www.fulgenc.io">Ohana</a>
+        <a href="https://wellapp.com/">WELL Health</a>
         .
       </motion.p>
     </motion.section>
