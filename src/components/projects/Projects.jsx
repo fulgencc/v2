@@ -1,6 +1,7 @@
 import React from 'react';
 import nerddarts from '../../images/nerd-darts.jpg';
 import fulgencio from '../../images/fulgencio.png';
+import giphySearchClone from '../../images/giphy-search-clone.png';
 import * as styles from './projects.module.scss';
 
 const Projects = () => (
@@ -10,7 +11,9 @@ const Projects = () => (
       <li className={styles.project}>
         <div className={styles.project_content}>
           <p className={styles.project_subtitle}>Personal Project</p>
-          <h3 className={styles.project_title}>Nerd Darts</h3>
+          <h3 className={styles.project_title}>
+            <a href="https://nerddarts.herokuapp.com/" target="_blank" rel="noreferrer">Nerd Darts</a>
+          </h3>
           <div className={styles.project_descr}>
             <p>
               A web app for the tactical shooter Valorant. The app aims
@@ -64,7 +67,7 @@ const Projects = () => (
           </ul>
         </div>
         <div className={styles.imageWrapper}>
-          <img src={nerddarts} className={styles.image} alt="me" />
+          <img src={giphySearchClone} className={styles.image} alt="me" />
         </div>
       </li>
     </ul>

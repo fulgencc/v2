@@ -81,6 +81,12 @@
                 margin-top: 0;
                 margin-bottom: 12px;
                 font-size: 28px;
+                a {
+                    color: $primary-200;
+                    &:hover {
+                        color: $highlight-300;
+                    }
+                }
             }
             .project_descr {
                 box-shadow: 0 20px 30px -15px $background;
