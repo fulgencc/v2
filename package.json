@@ -16,7 +16,7 @@
     "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "dependencies": {
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^6.3.16",
     "gatsby": "^3.11.0",
     "gatsby-plugin-image": "^1.11.0",
     "gatsby-plugin-manifest": "^3.10.0",
